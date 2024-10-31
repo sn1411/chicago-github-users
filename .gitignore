@@ -162,10 +162,8 @@ cython_debug/
 #.idea/
 
 <<<<<<< HEAD
-test.ipynb
 
 =======
-test.ipynb
 venv
-scraper2.py
+.env
 >>>>>>> a4a389e880772b69d3f374fa4b2e8efa7d699736
