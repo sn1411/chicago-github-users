@@ -119,12 +119,15 @@ def save_repositories_to_csv(repositories, filename="repositories.csv"):
 
 def main():
     print("Fetching users...")
+    start_time_users = time.time()
     users = fetch_users()
     save_users_to_csv(users)
     total_users = len(users)
-    print(f"Saved {total_users} users to users.csv")
+    end_time_users = time.time()
+    print(f"Saved {total_users} users to users.csv in {end_time_users - start_time_users:.2f} seconds.")
 
     print("Fetching repositories...")
+    start_time_repos = time.time()
     all_repositories = []
     for i, user in enumerate(users, start=1):
         user_repos = fetch_repositories(user["login"])
@@ -132,7 +135,9 @@ def main():
         print(f"Fetched {len(user_repos)} repositories for user {user['login']} ({i}/{total_users})")
 
     save_repositories_to_csv(all_repositories)
+    end_time_repos = time.time()
     print(f"Saved {len(all_repositories)} repositories to repositories.csv")
+    print(f"Saved {len(all_repositories)} repositories to repositories.csv in {end_time_repos - start_time_repos:.2f} seconds.")
 
 if __name__ == "__main__":
     main()
