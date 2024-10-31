@@ -101,18 +101,35 @@ def save_repositories_to_csv(repositories, filename="repositories.csv"):
         writer.writeheader()
         writer.writerows(repositories)
 
+# def main():
+#     print("Fetching users...")
+#     users = fetch_users()
+#     save_users_to_csv(users)
+#     print(f"Saved {len(users)} users to users.csv")
+
+#     print("Fetching repositories...")
+#     all_repositories = []
+#     for user in users:
+#         user_repos = fetch_repositories(user["login"])
+#         all_repositories.extend(user_repos)
+#         print(f"Fetched {len(user_repos)} repositories for user {user['login']}")
+
+#     save_repositories_to_csv(all_repositories)
+#     print(f"Saved {len(all_repositories)} repositories to repositories.csv")
+
 def main():
     print("Fetching users...")
     users = fetch_users()
     save_users_to_csv(users)
-    print(f"Saved {len(users)} users to users.csv")
+    total_users = len(users)
+    print(f"Saved {total_users} users to users.csv")
 
     print("Fetching repositories...")
     all_repositories = []
-    for user in users:
+    for i, user in enumerate(users, start=1):
         user_repos = fetch_repositories(user["login"])
         all_repositories.extend(user_repos)
-        print(f"Fetched {len(user_repos)} repositories for user {user['login']}")
+        print(f"Fetched {len(user_repos)} repositories for user {user['login']} ({i}/{total_users})")
 
     save_repositories_to_csv(all_repositories)
     print(f"Saved {len(all_repositories)} repositories to repositories.csv")
