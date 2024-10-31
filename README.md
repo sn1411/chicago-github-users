@@ -12,28 +12,28 @@ The data was collected using the **GitHub API**, specifically targeting users lo
 ## Data Description
 The data used for this analysis includes information about GitHub users, such as:
 1. **users.csv** has following information about each user in Chicago with over 100 followers, with fields:
-    login: Their Github user ID
-    name: Their full name
-    company: The company they work at.
-    location: The city they are in
-    email: Their email address
-    hireable: Whether they are open to being hired
-    bio: A short bio about them
-    public_repos: The number of public repositories they have
-    followers: The number of followers they have
-    following: The number of people they are following
-    created_at: When they joined Github
+   - login: Their Github user ID
+   - name: Their full name
+   - company: The company they work at.
+   - location: The city they are in
+   - email: Their email address
+   - hireable: Whether they are open to being hired
+   - bio: A short bio about them
+   - public_repos: The number of public repositories they have
+   - followers: The number of followers they have
+   - following: The number of people they are following
+   - created_at: When they joined Github
 
 2. **repositories.csv** has these users' public repositories. For each user in users.csv, up to the 500 most recently pushed repositories were fetched, with fields:
-    login: The Github user ID (login) of the owner, which, BTW, is not directly in the API response.)
-    full_name: Full name of the repository
-    created_at: When the repository was created
-    stargazers_count: Number of stars the repository has
-    watchers_count: Number of watchers the repository has
-    language: The programming language the repository is written in
-    has_projects: Whether the repository has projects enabled
-    has_wiki: Whether the repository has a wiki
-    license_name: Name of the license the repository is under (This is under license.key)
+   - login: The Github user ID (login) of the owner, which, BTW, is not directly in the API response.)
+   - full_name: Full name of the repository
+   - created_at: When the repository was created
+   - stargazers_count: Number of stars the repository has
+   - watchers_count: Number of watchers the repository has
+   - language: The programming language the repository is written in
+   - has_projects: Whether the repository has projects enabled
+   - has_wiki: Whether the repository has a wiki
+   - license_name: Name of the license the repository is under 
 
 ## Key Analyses
 1. **Most Common Surname**: 
