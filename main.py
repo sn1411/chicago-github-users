@@ -1,6 +1,7 @@
 import requests
 import csv
 import time
+import os
 
 from dotenv import load_dotenv
 # Load environment variables from a .env file
